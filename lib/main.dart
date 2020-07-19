@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/Screens/Welcome/welcome_screen.dart';
-import 'package:flutter_demo/contants.dart';
+import 'package:flutter_demo/Screen/demo_screen.dart';
+import 'package:flutter_demo/demo1/contants.dart';
 
 void main() {
   runApp(MyApp());
@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primaryColor: PrimaryColor, scaffoldBackgroundColor: Colors.white),
-      home: WelcomeScreen(),
+      home: DemoScreen(),
     );
   }
 }
