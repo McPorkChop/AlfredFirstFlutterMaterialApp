@@ -57,6 +57,9 @@ First screen is a welcome screen for user to choose login or sign up.At welcome 
 ## 使用的组件知识
 
 ### StatelessWidget
+无状态的Widget。参数一旦传递则不能更改。当不需要依赖父容器时，优先采用这个Widget。
+### StatefulWidget
+有状态的Widget，需要先定义一个类继承自StateFulWidget，且类中必须重写createState方法，该方法返回一个继承自State的类的实例。
 ### Scaffold
 [官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)
 实现了最基础的Material Design的视觉效果。
@@ -80,6 +83,12 @@ First screen is a welcome screen for user to choose login or sign up.At welcome 
 ### Container
 最普通常用的容器，可以结合常见的绘制，定位和制定的组件。
 
+容器首先渲染padding，然后应用额外限制(constraints)到已经渲染了padding的内容上（如果高宽设置不为空，高宽合并到constraints）。最后容器会被包裹在margin的空白内容中。
+
+在绘制过程中，容器先应用传入的transform，然后基于padding绘制背景(decoration)，之后绘制他的子内容，最后基于padding绘制前景(foregroundDecoration)。
+
+没有子内容的容器会尽量大的去绘制容器，除非除非配置的或父内容的尺寸限制(constraints)。
+在配置了constraints的情况下，会尽量的小的绘制容器，如果容器包含子内容，则会根据子内容的大小进行调整。除非构造函数中配置了width、height和constrain。
 
 常用属性：
 - alignment(AlignmentGeometry)：子内容的对其方式
@@ -90,6 +99,27 @@ First screen is a welcome screen for user to choose login or sign up.At welcome 
 - foregroundDecoration(Decoration)：容器的前景装饰
 - margin(EdgeInsetsGeometry)：外边距
 - padding(EdgeInsetsGeometry)：内边距
+
+布局行为：
+容器包含了若干其他不容的小部件及其不容的布局，所以容器的布局行为会有些复杂。
+总之容器尝试去有序的：
+- 渲染对其方式
+- 结合子内容调整自己的大小
+- 渲染宽高
+- 限制子内容
+- 扩充自己去适应父容器
+- 尽可能的小
+
+更加具体的内容例如：
+- 如果部件没有子内容，没有设置宽高，没有设置限制，同时他的父容器无限制，则容器会尽可能的小。
+- 如果部件没有子内容，也没有设置对其方式，但是设置了宽高或者constraints，则容器将会结合constraints和父容器的constraints，尽可能的小。
+- 如果部件没有子内容，没有设置宽高，没有设置constraints，没有设置对其方式，但是父容器提供了constraint，则容器铺满父容器限制的大小。
+- 如果部件配置了对其方式，而且父容器未提供constraints，则容器会调整大小到刚好包裹
+子内容。
+- 如果部件配置了对其方式，而且父容器配置了constraints，则容器会尝试铺满父容器，同时根据对其方式排列子内容。
+- 除非部件有一个子内容，但是没有设置宽高、constraints和对其方式，则容器会将父容器的constraints应用到子内容，同时使容器的大小包裹子内容。
+- 容器的margin和padding属性也会影响到布局。
+
 ### Column
 [官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)
 垂直的展示他的子节点，如果希望子节点平分可用高度，需要把子内容包含在Expended之内。
@@ -116,7 +146,7 @@ Row的布局算法：
 [官方文档](https://api.flutter.dev/flutter/widgets/Row-class.html)
 水平的展示它的子节点。如果希望子节点平分可用宽度，需要把子内容包含在Expended之内。
 同时Row不支持滚动，如果需要支持滚动请使用ListView。
-如果只有一个子内容，则尝试使用Align或者Center控制子内容的显示位置。
+如果只有一个子内容，则尝试使用Align或者Center部件控制子内容的显示位置。
 
 常用属性：  
 - children(<Widget>[]):多个子内容
