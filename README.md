@@ -59,7 +59,7 @@ First screen is a welcome screen for user to choose login or sign up.At welcome 
 ### StatelessWidget
 无状态的Widget。参数一旦传递则不能更改。当不需要依赖父容器时，优先采用这个Widget。
 ### StatefulWidget
-有状态的Widget，需要先定义一个类继承自StateFulWidget，且类中必须重写createState方法，该方法返回一个继承自State的类的实例。
+有状态的Widget，需要先定义一个类继承自StateFulWidget，且类中必须重写createState方法，该方法返回一个继承自State的类的实例。界面可以动态渲染。
 ### Scaffold
 [官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)
 实现了最基础的Material Design的视觉效果。
@@ -165,6 +165,21 @@ Row的布局算法：
 1. Row的宽度的通过mainAxisSize属性规定。如果mainAxisSize为MainAxisSize.Max则Row的宽度为其父亲的最大宽度；如果mainAxisSize为MainAxisSize.Min则Row的宽度为其子内容宽度总和（不超过Row父亲的宽度限制）
 1. 决定子内容位置的是mainAxisAlignment和crossAxisAlignment属性。
 ### Stack
+Stack是一个可以让子内容相对其定位的部件。如果要快速的叠加若干个部件，那么Stack是最合适的。
+Stack的子内容要么是定位的，要么是非定位的。定位的子内容被包裹在Positioned部件中，至少配置了一个属性。
+Stack的大小会包裹住所有非定位的子内容，非定位的子内容会根据alignment属性（默认是top-left）定位。而定位的子内容会相对于Stack，根据top,left,bottom,right定位。
+Stack会根据children的顺序，以栈的顺序渲染。如果你想更改children渲染的顺序，可以尝试重新排列children顺序，同时建议给每一个子内容定义一个非空的key。当定义了非空的key时，flutter在重新排列children顺序时会移动对应子内容到新位置，而不是在新位置去重新创建子内容。
+如果要以特殊的模板布局多个子内容，或是要创建自定义的布局管理，可能使用CustomMultiChildLayout代替较好。特别是，使用Stack时，不能相对于子内容的大小或Stack自己children的个数来定位子内容。
+
+常用属性：
+- children(List<Widget>):子内容数组
+- alignment(AlignmentGeometry):对其方式
+- fit(StackFit):非定位子内容的尺寸限制。
+- OverFlow(OverFlow):超出Stack尺寸的子内容的显示方式
+- textDirection(TextDirection):文字方形
+
+Stack布局算法：
+
 ### GestureDetector
 ### Icon
 ### TextField
