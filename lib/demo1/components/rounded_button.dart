@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../contants.dart';
+import '../../contants.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
@@ -10,20 +10,24 @@ class RoundedButton extends StatelessWidget {
       {Key key,
       this.text,
       this.press,
-      this.color = PrimaryColor,
+      this.color,
       this.textColor = Colors.white})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    Color _color;
+    if(this.color==null)
+    _color=themeColorMap["demo1"].primaryColor;
+    else _color=this.color;
     return Container(
       margin: EdgeInsets.symmetric(vertical:10),
       width: size.width * 0.8,
       child: ClipRRect(
         borderRadius: BorderRadius.circular(29),
         child: FlatButton(
-          color: color ,
+          color: _color ,
           padding: EdgeInsets.symmetric(vertical: 20, horizontal: 40),
           onPressed: press,
           child: Text(

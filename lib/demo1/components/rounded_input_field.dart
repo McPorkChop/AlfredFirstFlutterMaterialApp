@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../contants.dart';
+import '../../contants.dart';
 import 'rounded_text_fileld_container.dart';
 
 class RoundedInputField extends StatelessWidget {
@@ -19,6 +19,7 @@ class RoundedInputField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color primaryColor=themeColorMap["demo1"].primaryColor;
     return RoundedTextFieldContainer(
       child: TextField(
           obscureText: password,
@@ -27,7 +28,7 @@ class RoundedInputField extends StatelessWidget {
               hintText: hit,
               icon: Icon(
                 icon,
-                color: PrimaryColor,
+                color: primaryColor,
               ),
               suffixIcon: password ? Icon(Icons.visibility) : null,
               border: InputBorder.none)),

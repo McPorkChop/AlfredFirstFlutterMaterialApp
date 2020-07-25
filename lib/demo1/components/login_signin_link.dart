@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../contants.dart';
+import '../../contants.dart';
 
 class LoginOrSignInLink extends StatelessWidget {
   final Function press;
@@ -10,9 +10,9 @@ class LoginOrSignInLink extends StatelessWidget {
     @required this.press,
     this.login = true,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
+  Color PrimaryColor = themeColorMap["demo1"].primaryColor;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[

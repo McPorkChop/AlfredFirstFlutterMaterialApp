@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/contants.dart';
 import 'package:flutter_demo/demo1/Screens/Login/login_screen.dart';
 import 'package:flutter_demo/demo1/Screens/SignUp/components/background.dart';
 import 'package:flutter_demo/demo1/components/login_signin_link.dart';
@@ -7,7 +8,6 @@ import 'package:flutter_demo/demo1/components/rounded_input_field.dart';
 import 'package:flutter_demo/demo1/components/text_driver.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../contants.dart';
 import 'social_icon.dart';
 
 class Body extends StatelessWidget {
@@ -16,6 +16,7 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    Color primary=themeColorMap["demo1"].primaryColor;
     return Background(
       child: SingleChildScrollView(
         child: Column(
@@ -26,7 +27,7 @@ class Body extends StatelessWidget {
               height: size.height * 0.03,
             ),
             SvgPicture.asset(
-              "assets/icons/signup.svg",
+              "assets/demo1/icons/signup.svg",
               height: size.height * 0.35,
             ),
             SizedBox(
@@ -46,7 +47,7 @@ class Body extends StatelessWidget {
             RoundedButton(
               text: "SIGN UP",
               press: () {},
-              color: PrimaryColor,
+              color: primary,
             ),
             SizedBox(
               height: size.height * 0.03,
@@ -62,13 +63,13 @@ class Body extends StatelessWidget {
             SizedBox(
               height: size.height * 0.02,
             ),
-            TextDriver(text: "OR", textColor: PrimaryColor),
+            TextDriver(text: "OR", textColor: primary),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SocialIcon(svg: "assets/icons/facebook.svg", press: () {}),
-                SocialIcon(svg: "assets/icons/twitter.svg", press: () {}),
-                SocialIcon(svg: "assets/icons/google-plus.svg", press: () {}),
+                SocialIcon(svg: "assets/demo1/icons/facebook.svg", press: () {}),
+                SocialIcon(svg: "assets/demo1/icons/twitter.svg", press: () {}),
+                SocialIcon(svg: "assets/demo1/icons/google-plus.svg", press: () {}),
               ],
             )
           ],

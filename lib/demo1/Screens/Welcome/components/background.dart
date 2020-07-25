@@ -22,13 +22,13 @@ final Widget child;
             top:0,
             left:0,
             child: Image.asset(
-              "assets/images/main_top.png",
+              "assets/demo1/images/main_top.png",
               width: size.width*0.3)),
            Positioned(
              bottom: 0,
              left:0,
              child: Image.asset(
-               "assets/images/main_bottom.png",
+               "assets/demo1/images/main_bottom.png",
              width: size.width*0.2,)),
              child
         ],
