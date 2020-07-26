@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/Model/demo_theme.dart';
 import 'package:flutter_demo/Provide/theme_provide.dart';
 import 'package:flutter_demo/Screen/demo_screen.dart';
 import 'package:flutter_demo/demo1/Screens/Welcome/welcome_screen.dart';
@@ -12,9 +11,15 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   ThemeData _theme;
+
   @override
   Widget build(BuildContext context) {
     return MultiProvider(

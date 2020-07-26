@@ -7,7 +7,7 @@ class DemoScreen extends StatefulWidget {
 }
 
 class _DemoScreenState extends State<DemoScreen> {
-  void NavTo(BuildContext context, String url) {
+  void navTo(BuildContext context, String url) {
     Navigator.pushNamed(context, url);
   }
 
@@ -37,7 +37,7 @@ class _DemoScreenState extends State<DemoScreen> {
                         child: RaisedButton(
                           child: Text(demo.title),
                           onPressed: () {
-                            NavTo(context, demo.route);
+                            navTo(context, demo.route);
                           },
                         ),
                       ))
