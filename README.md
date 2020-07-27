@@ -181,10 +181,56 @@ Stack会根据children的顺序，以栈的顺序渲染。如果你想更改chil
 Stack布局算法：
 
 ### GestureDetector
+### InkWell
+是一个矩形的区域，用于相应Material Design的触控操作。当用户点击InkWell的区域时，会自动渲染一个MaterialDesign的水波纹效果。
+水波纹不会超出InkWell的范围，如果希望不要裁剪水波纹效果，可以使用InkResponse。
+InkWell的父内容必须有一个Material的部件。水波纹的动画最终实际上会被渲染在InkWell最近的Material父内容中。（这样才符合Material Design的理念）。
+使用这个部件时，可以在Build函数的一开始调用debugCheckHasMaterial(context)检查是否有效。
+
+
+常用属性：
+- borderRadius(BorderRadius):圆角
+- child(Widget):子内容
+- radius(double):水波纹辐射大小
+- splashColor(Color):水波纹颜色
+- 
+
 ### Icon
+[官方文档](https://api.flutter.dev/flutter/widgets/Icon-class.html)
+是一个图形图标部件，根据IconData定义的字体图标信息绘制。可以使用flutter内置的Material风格的Icons。
+Icon不是一个可交互的部件，如果希望构建一个可交互的Icon，建议使用IconButton。
+注意：非方形的图标渲染可能出错。
+
+常用属性：
+- color(Color):图标颜色
+- icon(IconData):图标
+- semanticLabel(String):图标的描述。在障碍模式下有效。
+- size(double):尺寸
+- textDirection(TextDirection):方向
 ### TextField
 ### Text
+[官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)
+显示一段单一样式的文字，且显示的文字可以被断行。
+当没有定义style属性时，Text会从使用最近的父内容的DefaultTextStyle。
+如果设置style的TextStyle.inherit为true，则给定的样式会与最近的父内容的DefaultTextStyle合并。
+
+使用Text.rich构造函数的话，Text可以利用TextSpan显示一段有不同的格式的文字。RichText部件也可以达到相同效果。
+
+如果想要通过Text交互，可以将其包裹在GestureDetector部件中。但是在MaterialDesign的应用中，建议使用FlatButton部件替代。如果FlatButton不适用，则可以使用InkWell替代GestureDetector。
+
+如果要在一段文字的某一部分进行交互操作，使用RichText部件并指定TapGestureRecognized到需要交互的TextSpan的recognized属性上。
+
+常用属性：
+- data(String):显示的文字
+- locale(Locale):本地化配置
+- maxLines(int):最多显示行数
+- overflow(TextOverflow):文字超出的显示方式
+- style(TextStyle):文字样式
+- textAlign(TextAlign):文字对其方式
+- textDirection(TextDirection):文字显示方式
+
 ### Divider
 ### SizedBox
 ### Navigator
 ### SingleChildScrollView
+### Hero
