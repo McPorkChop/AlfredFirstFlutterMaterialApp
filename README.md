@@ -58,8 +58,10 @@ First screen is a welcome screen for user to choose login or sign up.At welcome 
 
 ### StatelessWidget
 无状态的Widget。参数一旦传递则不能更改。当不需要依赖父容器时，优先采用这个Widget。
+
 ### StatefulWidget
 有状态的Widget，需要先定义一个类继承自StateFulWidget，且类中必须重写createState方法，该方法返回一个继承自State的类的实例。界面可以动态渲染。
+
 ### Scaffold
 [官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)
 实现了最基础的Material Design的视觉效果。
@@ -142,6 +144,7 @@ Row的布局算法：
 1. Column的宽度是子内容的最大高度。
 1. Column的高度的通过mainAxisSize属性规定。如果mainAxisSize为MainAxisSize.Max则Row的宽度为其父亲的最大宽度；如果mainAxisSize为MainAxisSize.Min则Row的宽度为其子内容宽度总和（不超过Row父亲的宽度限制）
 1. 决定子内容位置的是mainAxisAlignment和crossAxisAlignment属性。
+
 ### Row
 [官方文档](https://api.flutter.dev/flutter/widgets/Row-class.html)
 水平的展示它的子节点。如果希望子节点平分可用宽度，需要把子内容包含在Expended之内。
@@ -164,6 +167,7 @@ Row的布局算法：
 1. Row的高度是子内容的最大高度。
 1. Row的宽度的通过mainAxisSize属性规定。如果mainAxisSize为MainAxisSize.Max则Row的宽度为其父亲的最大宽度；如果mainAxisSize为MainAxisSize.Min则Row的宽度为其子内容宽度总和（不超过Row父亲的宽度限制）
 1. 决定子内容位置的是mainAxisAlignment和crossAxisAlignment属性。
+
 ### Stack
 Stack是一个可以让子内容相对其定位的部件。如果要快速的叠加若干个部件，那么Stack是最合适的。
 Stack的子内容要么是定位的，要么是非定位的。定位的子内容被包裹在Positioned部件中，至少配置了一个属性。
@@ -189,11 +193,15 @@ InkWell的父内容必须有一个Material的部件。水波纹的动画最终�
 
 
 常用属性：
-- borderRadius(BorderRadius):圆角
+- borderRadius(BorderRadius):水波纹边界圆角
 - child(Widget):子内容
 - radius(double):水波纹辐射大小
 - splashColor(Color):水波纹颜色
-- 
+- containedInkWell(bool):水波纹是否可以超出容器
+- enableFeedback(bool):检测到交互时，是否有声音或者震动提示
+- onTap(Function)
+- onHover(Function)
+- hoverColor(Color):Hover状态的颜色
 
 ### Icon
 [官方文档](https://api.flutter.dev/flutter/widgets/Icon-class.html)
@@ -231,6 +239,24 @@ Icon不是一个可交互的部件，如果希望构建一个可交互的Icon，
 
 ### Divider
 ### SizedBox
+[官方文档](https://api.flutter.dev/flutter/widgets/SizedBox-class.html)
+是一个指定大小的容器。
+
+如果定义了子内容，则会强制子内容拥有SizedBox的宽高。
+如果SizedBox没有定义宽高，则会包裹子内容，但是如果子内容的大小取决于父内容的大小，则SizedBox的大小必须提供。如果没有子内容，SizedBox则会尝试去匹配父内容的尺寸限制。
+
+如果没有给SizedBox宽高且没有子内容，则会默认宽高皆为0。
+
+SizedBox.expand这个构造函数可以构建一个宽高匹配父内容的SizedBox，效果等同与设置Width和Height为double.infinity。
+
+常用属性：
+- height(double)
+- width(double)
+- child(Widget)
+
 ### Navigator
 ### SingleChildScrollView
 ### Hero
+### FloatingActionButton
+### RaisedButton
+[官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)
