@@ -216,6 +216,36 @@ Icon不是一个可交互的部件，如果希望构建一个可交互的Icon，
 - size(double):尺寸
 - textDirection(TextDirection):方向
 ### TextField
+[官方文档](https://api.flutter.dev/flutter/material/TextField-class.html)
+这个部件允许用户输入文字。
+当用户修改了内容时，会回调onChanged函数。当用户表示输入完毕，则会回调onSubmitted回调函数。大多数时候onSubmitted足够处理响应用户输。
+当用户完成输入时，onEditingComplete回调函数也会被调用，和onSubmitted不同的时他会有一个默认行为去更新text controller并终止键盘的focus。
+
+如果要控制TextField中显示的内容，可以使用controller属性指定一个controller。controller不仅可以TextField的显示内容，还可以控制内容的选择或者样式等。如果需要读取输入的值也可以通过controller.text获取。
+当controller不再需要时，一定要调用dispose。
+
+在Material的默认情况下，TextField会有一个下边框，可以通过decoration属性更改。
+如果要继承在FormField部件中，优先使用TextFormField
+
+常用属性：
+- controller(TextEditingController):指定的controller
+- cursorColor(Color):光标颜色
+- cursorRadius(Radius):光标的圆角
+- cursorWidth(double):光标宽度
+- decoration(InputDecoration):样式制定
+- enable(bool):启用/禁用
+- expands(bool):是否高度铺满父内容
+- keyboardType(TextInputType):键盘类型
+- obscureText(bool):是否隐藏输入内容
+- onChanged(Function):内容输入回调
+- onSubmitted(Function):内容改变回调
+- onTap(Function):点击回调
+- readOnly(bool):只读
+- style(TextStyle):输入内容的样式
+- textAlign(TextAlign):内容对其方式
+- textAlignVertical(TextAlignVertical):内容垂直对其方式
+- toolbarOptions(ToolbarOptions):定制工具条
+
 ### Text
 [官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)
 显示一段单一样式的文字，且显示的文字可以被断行。
