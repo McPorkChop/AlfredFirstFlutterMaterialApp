@@ -3,6 +3,7 @@ import 'package:flutter_demo/Provide/theme_provide.dart';
 import 'package:flutter_demo/Screen/demo_screen.dart';
 import 'package:flutter_demo/demo1/Screens/Welcome/welcome_screen.dart';
 import 'package:flutter_demo/contants.dart';
+import 'package:flutter_demo/demo3/screens/home/index.dart';
 import 'package:provider/provider.dart';
 
 import 'demo2/Screens/index/online_shop_screen.dart';
@@ -40,7 +41,8 @@ class _MyAppState extends State<MyApp> {
           routes: {
             "/": (BuildContext context) => DemoScreen(),
             "/demo1": (BuildContext context) => new WelcomeScreen(),
-            "/demo2": (BuildContext context) => new OnlineShop()
+            "/demo2": (BuildContext context) => new OnlineShop(),
+            "/demo3": (BuildContext context) => new MovieApp()
           },
         );
       }),

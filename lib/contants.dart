@@ -11,5 +11,8 @@ Map<String, ThemeData> themeColorMap = {
       primaryColor: Color(0xFF535353),
       primaryColorLight: Color(0xFFACACAC),
       textTheme: baseTheme.textTheme.apply(bodyColor: Color(0xFFACACAC)),
-      visualDensity: VisualDensity.adaptivePlatformDensity)
+      visualDensity: VisualDensity.adaptivePlatformDensity),
+  'demo3': baseTheme.copyWith(
+    primaryColor: Colors.white,
+  )
 };

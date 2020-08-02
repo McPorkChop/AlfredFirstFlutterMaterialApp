@@ -14,6 +14,7 @@ class _DemoScreenState extends State<DemoScreen> {
   List<Demo> demos = [
     Demo("Login/SignUp", "/demo1"),
     Demo("Online Shop", "/demo2"),
+    Demo("Movie App","/demo3")
   ];
   @override
   Widget build(BuildContext context) {
