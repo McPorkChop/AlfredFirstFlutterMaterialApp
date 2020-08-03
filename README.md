@@ -9,6 +9,19 @@ First screen is a welcome screen for user to choose login or sign up.At welcome 
 有三个界面。
 第一个界面是一个欢迎界面，用户可以在这里选择是登陆或者注册。如果用户点击登陆按钮，则会跳转到登陆界面，反之跳到注册界面。
 
+## EShop
+have 2 screens.
+First you will see a goods list,when user hit the goods item, it will shifts to detail screen by hero animation.
+有两个界面。
+首先进入的是商品列表页，当用户点击商品后跳转至商品详情页。Demo运用了Hero动画。
+
+## Movie App
+have 2 screens.
+First you will see a movie list that only contains 3 movies.User can switch the card to check other movies.when user hit the card it will shifts to the detail screen that show more information about the movie.
+有两个界面。
+首先进入的是商品列表页，当用户点击商品后跳转至商品详情页。Demo运用了Hero动画。
+
+
 # install Flutter on Mac
 1. Open Terminal
 1. Get SDK from [https://github.com/flutter/flutter.git](https://github.com/flutter/flutter.git)
@@ -290,3 +303,6 @@ SizedBox.expand这个构造函数可以构建一个宽高匹配父内容的Sized
 ### FloatingActionButton
 ### RaisedButton
 [官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)
+### AspectRatio
+### PageController
+### PageView
