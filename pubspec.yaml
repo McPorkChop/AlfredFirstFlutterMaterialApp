@@ -1,4 +1,4 @@
-name: flutter_demo
+name: Alfred's demo1
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -31,6 +31,8 @@ dependencies:
   flutter_svg: ^0.17.4
   provider: ^3.0.0
   animations: ^1.1.0
+  google_fonts: ^1.1.0
+  http: ^0.12.2
 
 dev_dependencies:
   flutter_test:
@@ -55,6 +57,9 @@ flutter:
     - assets/demo2/icons/
     - assets/demo3/images/
     - assets/demo3/icons/
+    - assets/demo4/spinner.gif
+    - assets/demo4/ripple.gif
+    - assets/demo4/icons/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

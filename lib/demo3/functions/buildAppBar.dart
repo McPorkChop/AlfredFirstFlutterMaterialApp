@@ -6,11 +6,7 @@ AppBar buildAppBar() {
   return AppBar(
     backgroundColor: Colors.white,
     elevation: 0,
-    leading: IconButton(
-      padding: EdgeInsets.only(left: DefaultPadding),
-      icon: SvgPicture.asset("assets/demo3/icons/menu.svg"),
-      onPressed: () {},
-    ),
+    leading:BackButton(),
     actions: <Widget>[
       IconButton(
           padding: EdgeInsets.symmetric(horizontal: DefaultPadding),

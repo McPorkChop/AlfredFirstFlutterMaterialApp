@@ -1,5 +1,6 @@
 class Demo {
   String title;
   String route;
-  Demo(this.title, this.route);
+  String theme;
+  Demo(this.title, this.route,this.theme);
 }

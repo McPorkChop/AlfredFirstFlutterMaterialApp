@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 ThemeData baseTheme = ThemeData(
     primaryColor: Color(0xFF6F3FA5),
@@ -14,5 +15,13 @@ Map<String, ThemeData> themeColorMap = {
       visualDensity: VisualDensity.adaptivePlatformDensity),
   'demo3': baseTheme.copyWith(
     primaryColor: Colors.white,
-  )
+  ),
+  'demo4': baseTheme.copyWith(
+      appBarTheme: AppBarTheme(
+          color: Colors.transparent,
+          elevation: 0,
+          brightness: Brightness.light),
+      scaffoldBackgroundColor: Colors.white,
+      textTheme:
+          GoogleFonts.dmSansTextTheme().apply(displayColor: Color(0xFF171717)))
 };

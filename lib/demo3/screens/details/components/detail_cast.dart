@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/demo2/constants.dart';
-import 'package:flutter_demo/demo3/models/movie.dart';
 import 'package:flutter_demo/demo3/screens/details/components/cast_card.dart';
 
 class DetailCast extends StatelessWidget {

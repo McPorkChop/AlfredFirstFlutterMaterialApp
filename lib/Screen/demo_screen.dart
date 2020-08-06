@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/Model/demo.dart';
+import 'package:flutter_demo/Provide/theme_provide.dart';
+import 'package:provider/provider.dart';
 
 class DemoScreen extends StatefulWidget {
   @override
@@ -12,9 +14,10 @@ class _DemoScreenState extends State<DemoScreen> {
   }
 
   List<Demo> demos = [
-    Demo("Login/SignUp", "/demo1"),
-    Demo("Online Shop", "/demo2"),
-    Demo("Movie App","/demo3")
+    Demo("Login/SignUp", "/demo1", "demo1"),
+    Demo("Online Shop", "/demo2", "demo2"),
+    Demo("Movie App", "/demo3", "demo3"),
+    Demo("Furniture", "/demo4", "demo4"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -38,6 +41,8 @@ class _DemoScreenState extends State<DemoScreen> {
                         child: RaisedButton(
                           child: Text(demo.title),
                           onPressed: () {
+                            Provider.of<ThemeProvider>(context)
+                                .setTheme(demo.theme);
                             navTo(context, demo.route);
                           },
                         ),
