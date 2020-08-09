@@ -17,11 +17,11 @@ Map<String, ThemeData> themeColorMap = {
     primaryColor: Colors.white,
   ),
   'demo4': baseTheme.copyWith(
-      appBarTheme: AppBarTheme(
-          color: Colors.transparent,
-          elevation: 0,
-          brightness: Brightness.light),
-      scaffoldBackgroundColor: Colors.white,
-      textTheme:
-          GoogleFonts.dmSansTextTheme().apply(displayColor: Color(0xFF171717)))
+    appBarTheme: AppBarTheme(
+        color: Colors.transparent, elevation: 0, brightness: Brightness.light),
+    scaffoldBackgroundColor: Colors.white,
+    textTheme: GoogleFonts.dmSansTextTheme().apply(
+      displayColor: Color(0xFF171717),
+    ),
+  ),
 };

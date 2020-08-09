@@ -18,6 +18,7 @@ class _DemoScreenState extends State<DemoScreen> {
     Demo("Online Shop", "/demo2", "demo2"),
     Demo("Movie App", "/demo3", "demo3"),
     Demo("Furniture", "/demo4", "demo4"),
+    Demo("EBook", "/demo5", "demo1"),
   ];
   @override
   Widget build(BuildContext context) {

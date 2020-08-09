@@ -76,7 +76,7 @@ First you will see a movie list that only contains 3 movies.User can switch the 
 有状态的Widget，需要先定义一个类继承自StateFulWidget，且类中必须重写createState方法，该方法返回一个继承自State的类的实例。界面可以动态渲染。
 
 ### Scaffold
-[官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)
+[官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)  
 实现了最基础的Material Design的视觉效果。
 提供了抽屉菜单，snack和sheet action的API。
 如果要显示snackbar或者sheet action，需要通过当前的上下文通过Scaffold.of取得ScaffoldState，然后通过ScaffoldState.showSnackBar或scaffoldState.showBottomSheet调用。 
@@ -136,7 +136,7 @@ First you will see a movie list that only contains 3 movies.User can switch the 
 - 容器的margin和padding属性也会影响到布局。
 
 ### Column
-[官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)
+[官方文档](https://api.flutter.dev/flutter/widgets/Column-class.html)  
 垂直的展示他的子节点，如果希望子节点平分可用高度，需要把子内容包含在Expended之内。
 同时Column不支持滚动，如果需要支持滚动请使用ListView。
 如果只有一个子内容，则尝试使用Align或者Center控制子内容的显示位置。
@@ -159,7 +159,7 @@ Row的布局算法：
 1. 决定子内容位置的是mainAxisAlignment和crossAxisAlignment属性。
 
 ### Row
-[官方文档](https://api.flutter.dev/flutter/widgets/Row-class.html)
+[官方文档](https://api.flutter.dev/flutter/widgets/Row-class.html)  
 水平的展示它的子节点。如果希望子节点平分可用宽度，需要把子内容包含在Expended之内。
 同时Row不支持滚动，如果需要支持滚动请使用ListView。
 如果只有一个子内容，则尝试使用Align或者Center部件控制子内容的显示位置。
@@ -217,7 +217,7 @@ InkWell的父内容必须有一个Material的部件。水波纹的动画最终�
 - hoverColor(Color):Hover状态的颜色
 
 ### Icon
-[官方文档](https://api.flutter.dev/flutter/widgets/Icon-class.html)
+[官方文档](https://api.flutter.dev/flutter/widgets/Icon-class.html)  
 是一个图形图标部件，根据IconData定义的字体图标信息绘制。可以使用flutter内置的Material风格的Icons。
 Icon不是一个可交互的部件，如果希望构建一个可交互的Icon，建议使用IconButton。
 注意：非方形的图标渲染可能出错。
@@ -229,7 +229,7 @@ Icon不是一个可交互的部件，如果希望构建一个可交互的Icon，
 - size(double):尺寸
 - textDirection(TextDirection):方向
 ### TextField
-[官方文档](https://api.flutter.dev/flutter/material/TextField-class.html)
+[官方文档](https://api.flutter.dev/flutter/material/TextField-class.html)  
 这个部件允许用户输入文字。
 当用户修改了内容时，会回调onChanged函数。当用户表示输入完毕，则会回调onSubmitted回调函数。大多数时候onSubmitted足够处理响应用户输。
 当用户完成输入时，onEditingComplete回调函数也会被调用，和onSubmitted不同的时他会有一个默认行为去更新text controller并终止键盘的focus。
@@ -260,7 +260,7 @@ Icon不是一个可交互的部件，如果希望构建一个可交互的Icon，
 - toolbarOptions(ToolbarOptions):定制工具条
 
 ### Text
-[官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)
+[官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)  
 显示一段单一样式的文字，且显示的文字可以被断行。
 当没有定义style属性时，Text会从使用最近的父内容的DefaultTextStyle。
 如果设置style的TextStyle.inherit为true，则给定的样式会与最近的父内容的DefaultTextStyle合并。
@@ -282,7 +282,7 @@ Icon不是一个可交互的部件，如果希望构建一个可交互的Icon，
 
 ### Divider
 ### SizedBox
-[官方文档](https://api.flutter.dev/flutter/widgets/SizedBox-class.html)
+[官方文档](https://api.flutter.dev/flutter/widgets/SizedBox-class.html)  
 是一个指定大小的容器。
 
 如果定义了子内容，则会强制子内容拥有SizedBox的宽高。
@@ -302,8 +302,11 @@ SizedBox.expand这个构造函数可以构建一个宽高匹配父内容的Sized
 ### Hero
 ### FloatingActionButton
 ### RaisedButton
-[官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)
+[官方文档](https://api.flutter.dev/flutter/widgets/Text-class.html)  
 ### AspectRatio
 ### PageController
 ### PageView
 ### Spacer
+### Notification
+
+通知组件。
